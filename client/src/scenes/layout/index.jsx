@@ -24,7 +24,8 @@ const Layout = () => {
   // Had an issue with the drawer not animating the way it should. Found an answer
   // saying that the state change cant be handled directly in the onClose prop.
   // You've gotta pass it to an external function and do it there for the built in
-  // animations to work.
+  // animations to work. 
+  // Still didn't work  :|
 
   const handleDrawerOpen = () => {
     setIsSidebarOpen(true);

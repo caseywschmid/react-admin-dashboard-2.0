@@ -17,6 +17,8 @@ import Breakdown from "scenes/breakdown";
 import Admin from "scenes/admin";
 import Performance from "scenes/performance";
 
+// Site deployed on Render
+// https://admin-dashboard-2-0-frontend.onrender.com
 
 function App() {
   // Redux

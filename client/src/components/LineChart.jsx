@@ -92,7 +92,7 @@ const LineChart = ({ isDashboard = false, view }) => {
       { sales: 0, units: 0 }
     );
 
-    return [[totalSalesLine], [totalUnitsLine]]
+    return [[totalSalesLine], [totalUnitsLine]];
   }, [data]); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (!data || isLoading) return "Loading...";

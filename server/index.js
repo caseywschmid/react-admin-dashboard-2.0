@@ -52,7 +52,8 @@ app.use("/general", generalRoutes);
 app.use("/management", managementRoutes);
 app.use("/sales", salesRoutes);
 
-// Mongoose Setup
+// **********************************************************
+//                      Mongoose Setup
 // **********************************************************
 
 // process.env allows you to access the variables set in your .env file.
@@ -65,7 +66,8 @@ mongoose
   })
   .then(() => {
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
-
+    
+    //*************************************************
     // Only add the data once!!
     //*************************************************
     // User.insertMany(dataUser);

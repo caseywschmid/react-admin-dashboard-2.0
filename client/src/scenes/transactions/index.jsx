@@ -26,7 +26,6 @@ const Transactions = () => {
     sort: JSON.stringify(sort),
     search,
   });
-  console.log("🚀 ~ file: index.jsx:22 ~ Transactions ~ data", data);
 
   const columns = [
     { field: "_id", headerName: "ID", flex: 1 },

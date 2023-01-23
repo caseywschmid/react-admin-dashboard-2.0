@@ -14,8 +14,6 @@ import {
   Typography,
   useTheme,
   useMediaQuery,
-  Card,
-  CardContent,
 } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import PieChart from "components/PieChart";
@@ -26,7 +24,7 @@ import { useGetDashboardQuery } from "state/api";
 //           DASHBOARD STAT CARD COMPONENT
 // ****************************************************
 
-const StatCard = ({ name, icon, value, percentage, text }) => {
+const StatCard = ({ name, icon, value, percentage }) => {
   const theme = useTheme();
 
   return (
@@ -96,6 +94,10 @@ const columns = [
   },
 ];
 
+// ****************************************************
+//                 DASHBOARD COMPONENT
+// ****************************************************
+
 const Dashboard = () => {
   const theme = useTheme();
   const isNonMediumScreens = useMediaQuery("(min-width: 1200px)");
@@ -126,7 +128,7 @@ const Dashboard = () => {
       </FlexBetween>
 
       {/* GRID & CHARTS */}
-      {/* Separate out each row into its own component */}
+
       <Box
         mt="20px"
         display="grid"
@@ -138,7 +140,6 @@ const Dashboard = () => {
         }}
       >
         {/* ROW 01 */}
-        {/* You could add this box to the StatBox Component */}
 
         <StatCard
           name="Total Customers"
@@ -173,6 +174,7 @@ const Dashboard = () => {
         >
           <LineChart view="sales" isDashboard={true} />
         </Box>
+
         <StatCard
           name="MonthlySales"
           icon={
@@ -254,141 +256,7 @@ const Dashboard = () => {
             Sales By Category
           </Typography>
           <PieChart isDashboard={true} />
-          <Typography
-            p="0 0.6rem"
-            fontSize="0.8rem"
-            sx={{ color: theme.palette.secondary[200] }}
-          >
-            Breakdown of real states and info via category for revenue made this
-            fiscal year
-          </Typography>
         </Box>
-
-        {/* <Box
-          gridColumn="span 4"
-          gridRow="span 2"
-          backgroundColor={colors.primary[400]}
-        >
-          <Typography variant="h5" fontWeight="600" sx={{ p: "30px" }}>
-            Sales Quantitiy
-          </Typography>
-          <Box height="290px" mt="-60px">
-            <BarChart isDashboard={true} />
-          </Box>
-        </Box> */}
-
-        {/* <Box
-          gridColumn="span 4"
-          gridRow="span 2"
-          backgroundColor={colors.primary[400]}
-          p="20px"
-        >
-          <Typography variant="h5" fontWeight="600" sx={{ mb: "-10px" }}>
-            Geography Based Traffic
-          </Typography>
-          <Box height="250px">
-            <GeoChart isDashboard={true} />
-          </Box>
-        </Box> */}
-
-        {/* ROW 03 */}
-        {/* LINE GRAPH */}
-        {/* <Box
-          gridColumn="span 8"
-          gridRow="span 2"
-          backgroundColor={colors.primary[400]}
-        >
-          <Box
-            mt="25px"
-            p="0 30px"
-            display="flex"
-            alignItems="center"
-            justifyContent="space-between"
-          >
-            <Box>
-              <Typography
-                variant="h5"
-                fontWeight="600"
-                color={colors.grey[100]}
-              >
-                Revenue Generated
-              </Typography>
-              <Typography
-                variant="h3"
-                fontWeight="bold"
-                color={colors.greenAccent[500]}
-              >
-                $23,546.23
-              </Typography>
-            </Box>
-
-            <Box>
-              <IconButton>
-                <DownloadOutlinedIcon
-                  sx={{ fontSize: "26px", color: colors.greenAccent[500] }}
-                />
-              </IconButton>
-            </Box>
-          </Box>
-
-          <Box height="250px" mt="-20px">
-            <LineChart isDashboard={true} />
-          </Box>
-        </Box> */}
-
-        {/* TRANSACTIONS */}
-        {/* <Box
-          gridColumn="span 4"
-          gridRow="span 2"
-          backgroundColor={colors.primary[400]}
-          overflow="auto"
-        >
-          <Box
-            display="flex"
-            justifyContent="space-between"
-            alignItems="center"
-            borderBottom={`3px solid ${colors.grey[400]}`}
-            colors={colors.grey[100]}
-            p="15px"
-          >
-            <Typography color={colors.grey[100]} variant="h5" fontWeight="600">
-              Recent Transactions
-            </Typography>
-          </Box>
-          {mockTransactions.map((transaction, i) => (
-            <Box
-              key={`${transaction.txId}-${i}`}
-              display="flex"
-              justifyContent="space-between"
-              alignItems="center"
-              borderBottom={`2px solid ${colors.grey[400]}`}
-              colors={colors.grey[100]}
-              p="15px"
-            >
-              <Box>
-                <Typography
-                  color={colors.greenAccent[500]}
-                  variant="h5"
-                  fontWeight="600"
-                >
-                  {transaction.txId}
-                </Typography>
-                <Typography color={colors.grey[100]}>
-                  {transaction.user}
-                </Typography>
-              </Box>
-              <Box color={colors.grey[100]}>{transaction.date}</Box>
-              <Box
-                backgroundColor={colors.greenAccent[500]}
-                p="5px 10px"
-                borderRadius="4px"
-              >
-                ${transaction.cost}
-              </Box>
-            </Box>
-          ))}
-        </Box> */}
-        {/* Final Boxes */}
       </Box>
     </Box>
   );

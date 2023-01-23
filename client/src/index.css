@@ -9,6 +9,8 @@ body,
   font-family: "Inter", sans-serif;
 }
 
+/* Dashboard Data Grid Scroll Styles */
+
 ::-webkit-scrollbar {
   width: 10px;
 }

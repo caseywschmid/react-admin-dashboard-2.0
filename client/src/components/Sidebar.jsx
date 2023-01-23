@@ -99,9 +99,7 @@ const Sidebar = ({
   user,
   drawerWidth,
   isSidebarOpen,
-  setIsSidebarOpen,
   isNonMobile,
-  handleDrawerOpen,
   handleDrawerClose,
   toggleDrawer,
 }) => {
