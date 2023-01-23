@@ -1,7 +1,7 @@
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
 import { useMemo } from "react";
-import { HashRouter, Navigate, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { themeSettings } from "theme";
 import Layout from "scenes/layout";
 import Dashboard from "scenes/dashboard";
@@ -31,7 +31,7 @@ function App() {
 
   return (
     <div className="app">
-      <HashRouter>
+      <BrowserRouter>
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <Routes>
@@ -59,7 +59,7 @@ function App() {
             </Route>
           </Routes>
         </ThemeProvider>
-      </HashRouter>
+      </BrowserRouter>
     </div>
   );
 }

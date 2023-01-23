@@ -3,8 +3,8 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const api = createApi({
   // I'm using an environment variable so that it can be easily changed when/if
   // this app goes into production.
-  // baseQuery: fetchBaseQuery({ baseUrl: process.env.REACT_APP_BASE_URL }),
-  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:5001" }),
+  baseQuery: fetchBaseQuery({ baseUrl: process.env.REACT_APP_BASE_URL }),
+  // baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:5001" }),
   reducerPath: "adminApi",
   // represent the state of which you can identify particular data.
   tagTypes: [
